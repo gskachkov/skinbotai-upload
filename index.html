@@ -41,8 +41,7 @@ body {
   cursor: pointer;
 }
 
-.file-upload-btn:active, .file-try-btn:hover {
-  border: 0;
+.file-upload-btn:active, .file-try-btn:active {
   transition: all .2s ease;
 }
 
@@ -108,7 +107,7 @@ body {
   margin: 0;
   color: #444;
   background: transparent;
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 1);
   padding: 10px;
   border-radius: 17px;
   transition: all .2s ease;
@@ -125,7 +124,6 @@ body {
 }
 
 .remove-image:active {
-  border: 0;
   transition: all .2s ease;
 }
 
@@ -137,7 +135,7 @@ body {
     height: 100%;
     background: black url(spinner.gif) center center no-repeat;
     opacity: .5;
-  display:none;
+    display:none;
 }
 
 .show-spinner .spinner-overlay {
