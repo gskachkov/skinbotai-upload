@@ -261,11 +261,11 @@ body {
     </div>
   </div>
   <div class="file-upload-content">
-    <h3>What we found on image:<h3/>
     <img class="file-upload-image" src="#" alt="your image" />
   </div>
   <button class="file-try-btn" type="button" onclick="detect()">Try now</button>
   <div class="detected-content">
+    <h4>What we found on image:<h4/>
     <img class="detected-image" src="#" alt="your image" />
   </div>
 </div>
@@ -282,10 +282,9 @@ function detect() {
   then(response => response.json()).
   then(myJson => {
     console.log(JSON.stringify(myJson));
-    $('.detected-content').show();
     const imgUrl = "https://saapi.azurewebsites.net/detected_image/" + myJson.detected_filename;
     $('.detected-image').attr('src', imgUrl);
-      $('.detected-image').show();
+    $('.detected-content').show();
     $('.app-wrapper').removeClass('show-spinner');
     $('.file-try-btn').hide();
   });
@@ -323,7 +322,7 @@ function removeUpload() {
   $('.file-upload-btn').show();
   $('.image-title-wrap').hide();
   $('.file-try-btn').hide();
-  $('.detected-image').hide();
+  $('.detected-content').hide();
 }
 
 $('.image-upload-wrap').bind('dragover', function () {
