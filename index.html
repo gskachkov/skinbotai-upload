@@ -273,21 +273,22 @@ body {
 
 <script id="rendered-js">
 function detect() {
-  console.log('start loading');
   const inputFile = document.querySelector('input[type="file"]');
+
   const formData = new FormData();
   formData.append('photo', inputFile.files[0], inputFile.files[0].name);
   const options = { method: 'post', mode: 'cors', body: formData };
+
   fetch('https://saapi.azurewebsites.net/api/detect', options).
   then(response => response.json()).
   then(myJson => {
-    console.log(JSON.stringify(myJson));
-    const imgUrl = "https://saapi.azurewebsites.net/detected_image/" + myJson.detected_filename;
+    const imgUrl = "https://saapi.azurewebsites.net/" + myJson.filename;
     $('.detected-image').attr('src', imgUrl);
     $('.detected-content').show();
     $('.app-wrapper').removeClass('show-spinner');
     $('.file-try-btn').hide();
   });
+
   $('.app-wrapper').addClass('show-spinner');
 }
 
