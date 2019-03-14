@@ -64,13 +64,13 @@ body {
 
 .image-upload-wrap {
   margin-top: 20px;
-  border: 4px dashed #1FB264;
+  border: 4px dashed rgba(0, 0, 0, 1);
   position: relative;
 }
 
 .image-dropping,
 .image-upload-wrap:hover {
-  background-color: #1FB264;
+  background-color: rgba(0, 0, 0, 1);
   border: 4px dashed #ffffff;
 }
 
@@ -88,8 +88,12 @@ body {
 .drag-text h3 {
   font-weight: 100;
   text-transform: uppercase;
-  color: #15824B;
+  color: #444;
   padding: 60px 0;
+}
+  
+.drag-text h3:hover {
+  color: #fff;
 }
 
 .file-upload-image, .detected-image {
