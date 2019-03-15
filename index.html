@@ -282,7 +282,7 @@ function detect() {
   fetch('https://saapi.azurewebsites.net/api/detect', options).
   then(response => response.json()).
   then(myJson => {
-    const imgUrl = "https://saapi.azurewebsites.net/" + myJson.filename;
+    const imgUrl = "https://saapi.azurewebsites.net" + myJson.filename;
     $('.detected-image').attr('src', imgUrl);
     $('.detected-content').show();
     $('.app-wrapper').removeClass('show-spinner');
