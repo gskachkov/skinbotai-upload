@@ -279,10 +279,11 @@ function detect() {
   formData.append('photo', inputFile.files[0], inputFile.files[0].name);
   const options = { method: 'post', mode: 'cors', body: formData };
 
-  fetch('https://saapi.azurewebsites.net/api/detect', options).
+  const url = 'https://skinbotio.pagekite.me';
+  fetch(url + '/api/detect', options).
   then(response => response.json()).
   then(myJson => {
-    const imgUrl = "https://saapi.azurewebsites.net" + myJson.filename;
+    const imgUrl = url + myJson.filename;
     $('.detected-image').attr('src', imgUrl);
     $('.detected-content').show();
     $('.app-wrapper').removeClass('show-spinner');
